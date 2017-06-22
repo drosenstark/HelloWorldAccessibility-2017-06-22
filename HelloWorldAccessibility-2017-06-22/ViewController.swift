@@ -18,12 +18,21 @@ class ViewController: UIViewController {
         let button = outerButton
         let button2 = UIButton()
         button.addSubview(button2)
+        button.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)
+        button2.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)
+        button2.setTitle("✸", forState: .Normal)
+        button2.frame = button.bounds
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func what(sender: UIView) {
+        print("what it is \(sender.accessibilityLabel)")
+    
     }
 
 

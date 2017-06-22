@@ -10,8 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var outerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let button = outerButton
+        let button2 = UIButton()
+        button.addSubview(button2)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

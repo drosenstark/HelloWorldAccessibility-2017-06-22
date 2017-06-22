@@ -11,18 +11,21 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var outerButton: UIButton!
+    let button2 = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let button = outerButton
-        let button2 = UIButton()
         button.addSubview(button2)
         button.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)
         button2.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)
+        button2.accessibilityLabel = "this is two"
+        button2.accessibilityIdentifier = "this is his ID"
         button2.setTitle("✸", forState: .Normal)
         button2.frame = button.bounds
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +35,7 @@ class ViewController: UIViewController {
     
     @IBAction func what(sender: UIView) {
         print("what it is \(sender.accessibilityLabel)")
+        outerButton.accessibilityElements = [button2]
     
     }
 

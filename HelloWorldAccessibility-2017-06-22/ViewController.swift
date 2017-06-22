@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let button = outerButton
+//         button.isAccessibilityElement = false
         button.addSubview(button2)
         button.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)
         button2.addTarget(self, action: #selector(what), forControlEvents: .TouchUpInside)

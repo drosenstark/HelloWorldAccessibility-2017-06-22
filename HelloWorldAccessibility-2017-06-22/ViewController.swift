@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         button2.accessibilityLabel = "this is two"
         button2.accessibilityIdentifier = "this is his ID"
         button2.setTitle("✸", forState: .Normal)
-        button2.frame = button.bounds
+        var frame = button.bounds
+        frame.size.width = frame.size.width * 0.5
+        button2.frame = frame
         // Do any additional setup after loading the view, typically from a nib.
         
     }
